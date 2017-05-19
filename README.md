@@ -6,29 +6,16 @@
 [![GoDoc](https://godoc.org/github.com/JeffDeCola/gce-instance-resource?status.svg)](https://godoc.org/github.com/JeffDeCola/gce-instance-resource)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://jeffdecola.mit-license.org)
 
-`gce-instance-resource` _can be used as a template for developing a
-Concourse resource type. It is tested, built and pushed to
-DockerHub using Concourse._
+`gce-instance-resource` _ is a Concourse CI resource type to check for new
+Google Compute Engine (GCE) Instance. It is tested, built and pushed to
+DockerHub using Concourse CI._
 
 [GitHub Webpage](https://jeffdecola.github.io/gce-instance-resource/),
 [Docker Image](https://hub.docker.com/r/jeffdecola/gce-instance-resource)
 
-## USE EITHER BASH SCRIPT OR GO
-
-This resource type can use either bash script or go.
-
-Change _ci/Dockerfile_ to either ADD _/assets-go_ or _/assets-bash_.
-
-### USING BASH
+### SCRIPTS
 
 The 3 bash script files located in _/assets-bash_.
-
-### USING GO (default)
-
-The 3 bash scripts are located in _/assets-go_ that run _main.go_ with
-the second argument being _check_, _in_ or _out_ resepctively.
-Hence only one file _main.go_ need to be maintained, rather
-than three seperate files.
 
 ## SOURCE CONFIGURATION
 
