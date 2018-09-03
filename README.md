@@ -6,7 +6,7 @@
 [![GoDoc](https://godoc.org/github.com/JeffDeCola/gce-instance-resource?status.svg)](https://godoc.org/github.com/JeffDeCola/gce-instance-resource)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://jeffdecola.mit-license.org)
 
-`gce-instance-resource` _ is a Concourse CI resource type to check for new
+`gce-instance-resource` _ is a concourse resource type to check for new
 Google Compute Engine (GCE) Instance. It is tested, built and pushed to
 DockerHub using Concourse._
 
