@@ -1,17 +1,17 @@
 #!/bin/bash
-# resource-template readme-github-pages.sh
+# gce-instance-resource readme-github-pages.sh
 
 set -e -x
 
-# The code is located in /resource-template
+# The code is located in /gce-instance-resource
 echo "pwd is: " $PWD
 echo "List whats in the current directory"
 ls -lat 
 
-# Note: resource-template-updated already created becasue of yml file
-git clone resource-template resource-template-updated
+# Note: gce-instance-resource-updated already created becasue of yml file
+git clone gce-instance-resource gce-instance-resource-updated
 
-cd resource-template-updated
+cd gce-instance-resource-updated
 ls -lat 
 
 # FOR GITHUB WEBPAGES
