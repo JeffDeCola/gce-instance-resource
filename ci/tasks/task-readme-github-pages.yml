@@ -1,4 +1,4 @@
-# resource-template task-readme-github-pages.yml
+# gce-instance-resource task-readme-github-pages.yml
 
 platform: linux
 
@@ -9,10 +9,10 @@ image_resource:
     tag: 1.7.1
 
 inputs:
-- name: resource-template
+- name: gce-instance-resource
 
 outputs:
-- name: resource-template-updated
+- name: gce-instance-resource-updated
 
 run:
-  path: ./resource-template/ci/scripts/readme-github-pages.sh
+  path: ./gce-instance-resource/ci/scripts/readme-github-pages.sh
