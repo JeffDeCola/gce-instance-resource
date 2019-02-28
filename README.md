@@ -1,9 +1,9 @@
 # gce-instance-resource
 
-[![Code Climate](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/badges/gpa.svg)](https://codeclimate.com/github/JeffDeCola/gce-instance-resource)
-[![Issue Count](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/badges/issue_count.svg)](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/issues)
-[![Go Report Card](https://goreportcard.com/badge/jeffdecola/gce-instance-resource)](https://goreportcard.com/report/jeffdecola/gce-instance-resource)
+[![Go Report Card](https://goreportcard.com/badge/github.com/JeffDeCola/gce-instance-resource)](https://goreportcard.com/report/github.com/JeffDeCola/gce-instance-resource)
 [![GoDoc](https://godoc.org/github.com/JeffDeCola/gce-instance-resource?status.svg)](https://godoc.org/github.com/JeffDeCola/gce-instance-resource)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6bdbf329d966437eec99/maintainability)](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/maintainability)
+[![Issue Count](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/badges/issue_count.svg)](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/issues)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://jeffdecola.mit-license.org)
 
 `gce-instance-resource` _ is a concourse resource type to check for new
