@@ -6,15 +6,16 @@
 [![Issue Count](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/badges/issue_count.svg)](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/issues)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://jeffdecola.mit-license.org)
 
-`gce-instance-resource` _ is a concourse resource type to check for new
+`gce-instance-resource` _is a concourse resource type to check for new
 Google Compute Engine (GCE) Instance. It is tested, built and pushed to
 DockerHub using Concourse._
 
-[gce-instance-resource Docker Image](https://hub.docker.com/r/jeffdecola/gce-instance-resource) on DockerHub.
+[gce-instance-resource Docker Image](https://hub.docker.com/r/jeffdecola/gce-instance-resource)
+on DockerHub.
 
 [gce-instance-resource GitHub Webpage](https://jeffdecola.github.io/gce-instance-resource/)
 
-### SCRIPTS
+## SCRIPTS
 
 The 3 bash script files located in _/assets-bash_.
 
@@ -211,8 +212,8 @@ GET would look similiar.
 
 ## TESTED, BUILT & PUSHED TO DOCKERHUB USING CONCOURSE
 
-To automate the creation of the `gce-instance-resource` docker image, a concourse pipeline
-will,
+To automate the creation of the `gce-instance-resource` docker image, a
+concourse pipeline will,
 
 * Update README.md for gce-instance-resource github webpage.
 * Unit Test the code.
