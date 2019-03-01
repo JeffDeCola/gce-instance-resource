@@ -16,8 +16,8 @@ mkdir -p src/github.com/JeffDeCola/
 cp -R ./gce-instance-resource src/github.com/JeffDeCola/.
 
 # All set and everything is in the right place for go
-echo "Gopath is: " $GOPATH
-echo "pwd is: " $PWD
+echo "Gopath is: $GOPATH"
+echo "pwd is: $PWD"
 echo ""
 cd src/github.com/JeffDeCola/gce-instance-resource
 
@@ -34,12 +34,12 @@ echo ""
 
 # Move what you need to $GOPATH/dist
 # BECAUSE the resource type docker-image works in /dist.
-cp -R ./dist $GOPATH/.
-cp -R ./assets-go $GOPATH/dist/.
-cp -R ./assets-bash $GOPATH/dist/.
-cp  ./bin/tree $GOPATH/dist/.
+cp -R "./dist" "$GOPATH/."
+cp -R "./assets-go" "$GOPATH/dist/."
+cp -R "./assets-bash" "$GOPATH/dist/."
+cp "./bin/tree" "$GOPATH/dist/."
 
-cd $GOPATH
+cd "$GOPATH"
 # Check whats here
 echo "List whats in top directory"
 ls -lat 
