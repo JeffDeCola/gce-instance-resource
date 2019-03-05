@@ -1,5 +1,5 @@
 
-## SCRIPTS
+# SCRIPTS
 
 The 3 bash script files located in _/assets-bash_.
 
@@ -196,8 +196,8 @@ GET would look similiar.
 
 ## TESTED, BUILT & PUSHED TO DOCKERHUB USING CONCOURSE
 
-To automate the creation of the `gce-instance-resource` docker image, a concourse pipeline
-will,
+To automate the creation of the `gce-instance-resource` docker image, a
+concourse pipeline will,
 
 * Update README.md for gce-instance-resource github webpage.
 * Unit Test the code.
