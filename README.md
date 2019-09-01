@@ -1,5 +1,9 @@
 # gce-instance-resource
 
+```text
+*** THE REPO IS UNDER CONSTRUCTION - CHECK BACK SOON ***
+```
+
 [![Go Report Card](https://goreportcard.com/badge/github.com/JeffDeCola/gce-instance-resource)](https://goreportcard.com/report/github.com/JeffDeCola/gce-instance-resource)
 [![GoDoc](https://godoc.org/github.com/JeffDeCola/gce-instance-resource?status.svg)](https://godoc.org/github.com/JeffDeCola/gce-instance-resource)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6bdbf329d966437eec99/maintainability)](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/maintainability)
