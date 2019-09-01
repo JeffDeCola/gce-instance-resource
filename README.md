@@ -14,10 +14,12 @@
 Google Compute Engine (GCE) Instance. It is tested, built and pushed to
 DockerHub using Concourse._
 
-[gce-instance-resource Docker Image](https://hub.docker.com/r/jeffdecola/gce-instance-resource)
+The `gce-instance-resource Docker Image`
+[Docker Image](https://hub.docker.com/r/jeffdecola/gce-instance-resource Docker Image)
 on DockerHub.
 
-[gce-instance-resource GitHub Webpage](https://jeffdecola.github.io/gce-instance-resource/)
+The `gce-instance-resource Docker Image`
+[GitHub Webpage](https://jeffdecola.github.io/gce-instance-resource Docker Image/).
 
 ## SCRIPTS
 
