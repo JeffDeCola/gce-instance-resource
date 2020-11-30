@@ -1,28 +1,54 @@
-## TESTED, BUILT & PUSHED TO DOCKERHUB USING CONCOURSE
+# CONCOURSE CONTINUOUS INTEGRATION
 
-To automate the creation of the `gce-instance-resource` docker image, a
-concourse pipeline will,
+I use concourse ci to,
 
-* Update README.md for gce-instance-resource github webpage.
-* Unit Test the code.
-* Build the docker image `gce-instance-resource` and push to DockerHub.
+* Copy and edit `README.md` to `/docs/_includes/README.md` for
+  [GitHub Webpage](https://jeffdecola.github.io/gce-instance-resource/)
+* TEST code
+* BUILD docker image
+* PUSH docker image to dockerhub
+* Alert me of the progress via repo status and slack
+
+## PIPELINE
+
+The concourse
+[pipeline.yml](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci/pipeline.yml)
+shows the entire ci flow. Visually, it looks like,
 
 ![IMAGE - gce-instance-resource concourse ci pipeline - IMAGE](docs/pics/gce-instance-resource-pipeline.jpg)
 
-As seen in the pipeline diagram, the _resource-dump-to-dockerhub_ uses
-the resource type
-[docker-image](https://github.com/concourse/docker-image-resource)
-to push a docker image to dockerhub.
+## JOBS, TASKS AND RESOURCE TYPES
 
-`gce-instance-resource` also contains a few extra concourse resources:
+The concourse `jobs` and `tasks` are,
 
-* A resource (_resource-slack-alert_) uses a [docker image](https://hub.docker.com/r/cfcommunity/slack-notification-resource)
-  that will notify slack on your progress.
-* A resource (_resource-repo-status_) use a [docker image](https://hub.docker.com/r/dpb587/github-status-resource)
-  that will update your git status for that particular commit.
-* A resource ([_`resource-template`_](https://github.com/JeffDeCola/resource-template))
-  that can be used as a starting point and template for creating other concourse
-  ci resources.
+* `job-readme-github-pages` runs task
+  [task-readme-github-pages.yml](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci/tasks/task-readme-github-pages.yml)
+  that kicks off shell script
+  [readme-github-pages.sh](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci/scripts/readme-github-pages.sh)
+* `job-unit-tests` runs task
+  [task-unit-tests.yml](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci/tasks/task-unit-tests.yml)
+  that kicks off shell script
+  [unit-tests.sh](https://github.com/JeffDeCola/gce-instance-resource/tree/master/ci/scripts/unit-tests.sh)
+* `job-build-push` runs task
+  [task-build-push.yml](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci/tasks/task-build-push.yml)
+  that kicks off shell script
+  [build-push.sh](https://github.com/JeffDeCola/gce-instance-resource/tree/master/ci/scripts/build-push.sh)
+
+The concourse `resources types` are,
+
+* `gce-instance-resource` uses a resource type
+  [docker-image](https://hub.docker.com/r/concourse/git-resource/)
+  to PULL a repo from github
+* `resource-dump-to-dockerhub` uses a resource type
+  [docker-image](https://hub.docker.com/r/concourse/docker-image-resource/)
+  to PUSH a docker image to dockerhub
+* `resource-slack-alert` uses a resource type
+  [docker image](https://hub.docker.com/r/cfcommunity/slack-notification-resource)
+  that will notify slack on your progress
+* `resource-repo-status` uses a resource type
+  [docker image](https://hub.docker.com/r/dpb587/github-status-resource)
+  that will update your git status for that particular commit
 
 For more information on using concourse for continuous integration,
-refer to my cheat sheet on [concourse](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations-tools/continuous-integration-continuous-deployment/concourse-cheat-sheet).
+refer to my
+[concourse-cheat-sheet](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations-tools/continuous-integration-continuous-deployment/concourse-cheat-sheet).

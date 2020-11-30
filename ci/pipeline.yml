@@ -70,7 +70,7 @@ jobs:
       - put: resource-repo-status
         params: { state: "failure", description: "FAILED job-unit-tests in concourse ci.", commit: "gce-instance-resource" }
 
-- name: job-build
+- name: job-build-push
   plan:
     - get: gce-instance-resource
       trigger: true
@@ -78,11 +78,11 @@ jobs:
     - put: resource-slack-alert
       params:
         channel: '#jeff-builds'
-        text: "From gce-instance-resource: STARTED job-build in concourse ci."
+        text: "From gce-instance-resource: STARTED job-build-push in concourse ci."
     - put: resource-repo-status
-      params: { state: "pending", description: "STARTED job-build in concourse ci.", commit: "gce-instance-resource" }
-    - task: task-build
-      file: gce-instance-resource/ci/tasks/task-build.yml
+      params: { state: "pending", description: "STARTED job-build-push in concourse ci.", commit: "gce-instance-resource" }
+    - task: task-build-push
+      file: gce-instance-resource/ci/tasks/task-build-push.yml
     - put: resource-dump-to-dockerhub
       params: { build: "dist"}
     #- put: resource-template
@@ -92,17 +92,17 @@ jobs:
         - put: resource-slack-alert
           params:
             channel: '#jeff-builds'
-            text: "From gce-instance-resource: PASSED job-build in concourse ci."
+            text: "From gce-instance-resource: PASSED job-build-push in concourse ci."
         - put: resource-repo-status
-          params: { state: "pending", description: "PASSED job-build in concourse ci.", commit: "gce-instance-resource" }
+          params: { state: "pending", description: "PASSED job-build-push in concourse ci.", commit: "gce-instance-resource" }
       on_failure:
         do:
         - put: resource-slack-alert
           params:
             channel: '#jeff-builds'
-            text: "From gce-instance-resource: FAILED job-build in concourse ci."
+            text: "From gce-instance-resource: FAILED job-build-push in concourse ci."
         - put: resource-repo-status
-          params: { state: "failure", description: "FAILED job-build in concourse ci.", commit: "gce-instance-resource" }
+          params: { state: "failure", description: "FAILED job-build-push in concourse ci.", commit: "gce-instance-resource" }
     
 resource_types:
 
