@@ -20,8 +20,9 @@ Table of Contents,
 * [BEHAVIOR](https://github.com/JeffDeCola/gce-instance-resource#behavior)
   * [CHECK (a resource version(s))](https://github.com/JeffDeCola/gce-instance-resource#check-a-resource-versions)
   * [IN (fetch a resource)](https://github.com/JeffDeCola/gce-instance-resource#in-fetch-a-resource)
-  * [OUT (update a resouce)](https://github.com/JeffDeCola/gce-instance-resource#out-update-a-resouce)
+  * [OUT (update a resource)](https://github.com/JeffDeCola/gce-instance-resource#out-update-a-resouce)
 * [PIPELINE EXAMPLE USING PUT](https://github.com/JeffDeCola/gce-instance-resource#pipeline-example-using-put)
+* [CONTINUOUS INTEGRATION & DEPLOYMENT](https://github.com/JeffDeCola/gce-instance-resource#continuous-integration--deployment)
 
 Documentation and references,
 
@@ -146,7 +147,7 @@ echo '{
 go run main.go in $PWD
 ```
 
-### OUT (update a resouce)
+### OUT (update a resource)
 
 OUT will mimic updating a resource.
 
@@ -227,3 +228,9 @@ resources:
 ```
 
 GET would look similiar.
+
+## CONTINUOUS INTEGRATION & DEPLOYMENT
+
+Refer to
+[ci-README.md](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci-README.md)
+for how I automated the above process.
