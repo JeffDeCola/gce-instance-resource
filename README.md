@@ -10,16 +10,28 @@
 [![Issue Count](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/badges/issue_count.svg)](https://codeclimate.com/github/JeffDeCola/gce-instance-resource/issues)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://jeffdecola.mit-license.org)
 
-`gce-instance-resource` _is a concourse resource type to check for new
-Google Compute Engine (GCE) Instance. It is tested, built and pushed to
-DockerHub using Concourse._
+_A concourse resource type to check for a new Google Compute Engine (GCE) Instance.
+It is tested, built and pushed to DockerHub using Concourse._
 
-The `gce-instance-resource Docker Image`
-[Docker Image](https://hub.docker.com/r/jeffdecola/gce-instance-resource)
-on DockerHub.
+Table of Contents,
 
-The `gce-instance-resource Docker Image`
-[GitHub Webpage](https://jeffdecola.github.io/gce-instance-resource/).
+* [SCRIPTS](https://github.com/JeffDeCola/gce-instance-resource#scripts)
+* [SOURCE CONFIGURATION](https://github.com/JeffDeCola/gce-instance-resource#source-configuration)
+* [BEHAVIOR](https://github.com/JeffDeCola/gce-instance-resource#behavior)
+  * [CHECK (a resource version(s))](https://github.com/JeffDeCola/gce-instance-resource#check-a-resource-versions)
+  * [IN (fetch a resource)](https://github.com/JeffDeCola/gce-instance-resource#in-fetch-a-resource)
+  * [OUT (update a resouce)](https://github.com/JeffDeCola/gce-instance-resource#out-update-a-resouce)
+* [PIPELINE EXAMPLE USING PUT](https://github.com/JeffDeCola/gce-instance-resource#pipeline-example-using-put)
+
+Documentation and references,
+
+* The `gce-instance-resource`
+  [Docker Image](https://hub.docker.com/r/jeffdecola/gce-instance-resource)
+  on DockerHub
+
+[GitHub Webpage](https://jeffdecola.github.io/gce-instance-resource/)
+_built with
+[concourse ci](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci-README.md)_
 
 ## SCRIPTS
 
@@ -215,32 +227,3 @@ resources:
 ```
 
 GET would look similiar.
-
-## TESTED, BUILT & PUSHED TO DOCKERHUB USING CONCOURSE
-
-To automate the creation of the `gce-instance-resource` docker image, a
-concourse pipeline will,
-
-* Update README.md for gce-instance-resource github webpage.
-* Unit Test the code.
-* Build the docker image `gce-instance-resource` and push to DockerHub.
-
-![IMAGE - gce-instance-resource concourse ci pipeline - IMAGE](docs/pics/gce-instance-resource-pipeline.jpg)
-
-As seen in the pipeline diagram, the _resource-dump-to-dockerhub_ uses
-the resource type
-[docker-image](https://github.com/concourse/docker-image-resource)
-to push a docker image to dockerhub.
-
-`gce-instance-resource` also contains a few extra concourse resources:
-
-* A resource (_resource-slack-alert_) uses a [docker image](https://hub.docker.com/r/cfcommunity/slack-notification-resource)
-  that will notify slack on your progress.
-* A resource (_resource-repo-status_) use a [docker image](https://hub.docker.com/r/dpb587/github-status-resource)
-  that will update your git status for that particular commit.
-* A resource ([_`resource-template`_](https://github.com/JeffDeCola/resource-template))
-  that can be used as a starting point and template for creating other concourse
-  ci resources.
-
-For more information on using concourse for continuous integration,
-refer to my cheat sheet on [concourse](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations-tools/continuous-integration-continuous-deployment/concourse-cheat-sheet).
