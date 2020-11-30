@@ -114,7 +114,7 @@ echo '{
 go run main.go in $PWD
 ```
 
-### OUT (update a resouce)
+### OUT (update a resource)
 
 OUT will mimic updating a resource.
 
@@ -195,3 +195,9 @@ resources:
 ```
 
 GET would look similiar.
+
+## CONTINUOUS INTEGRATION & DEPLOYMENT
+
+Refer to
+[ci-README.md](https://github.com/JeffDeCola/gce-instance-resource/blob/master/ci-README.md)
+for how I automated the above process.
